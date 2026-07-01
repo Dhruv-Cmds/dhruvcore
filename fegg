@@ -1,0 +1,363 @@
+/* ===========================
+   MOBILE NAVIGATION
+=========================== */
+@media (max-width: 768px) {
+
+    .wrap {
+        padding: 0 18px;
+    }
+
+    nav .wrap {
+        height: 64px;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .badge {
+        display: none;
+    }
+
+}
+
+/* ===========================
+   HERO MOBILE FIX
+=========================== */
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 70px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 1.15;
+        margin-bottom: 20px;
+    }
+
+    .hero p.lede {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-bottom: 28px;
+    }
+
+    .cta-row {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 36px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+    }
+
+    .meta-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .terminal {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 40px;
+    }
+
+    .terminal-body {
+        padding: 16px;
+        font-size: 0.78rem;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    .terminal-bar {
+        padding: 10px 14px;
+    }
+
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p.lede {
+        font-size: 0.95rem;
+    }
+
+    .terminal-body {
+        font-size: 0.72rem;
+    }
+
+}
+
+/* ===========================
+   SECTION + ABOUT MOBILE FIX
+=========================== */
+@media (max-width: 768px) {
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-head {
+        margin-bottom: 36px;
+        padding: 0 10px;
+    }
+
+    .section-head h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-grid p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .fact {
+        padding: 16px 18px;
+    }
+
+    .fact-value {
+        font-size: .95rem;
+    }
+
+}
+
+/* ===========================
+   MARQUEE MOBILE FIX
+=========================== */
+
+@media (max-width: 768px) {
+
+    .marquee-wrap {
+        padding: 18px 0;
+    }
+
+    .marquee {
+        gap: 28px;
+        animation-duration: 20s;
+    }
+
+    .marquee span {
+        font-size: .82rem;
+        gap: 8px;
+    }
+
+}
+
+/* Very Small Phones */
+
+@media (max-width: 400px) {
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .section-head h2 {
+        font-size: 1.7rem;
+    }
+
+    .marquee span {
+        font-size: .75rem;
+    }
+
+}
+
+/* ===========================
+   STACK + PROJECTS MOBILE FIX
+=========================== */
+
+@media (max-width: 768px) {
+
+    /* ---------- Stack ---------- */
+
+    .stack-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stack-cell {
+        padding: 24px 16px;
+        gap: 12px;
+    }
+
+    .stack-icon {
+        width: 46px;
+        height: 46px;
+    }
+
+    .stack-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .stack-name {
+        font-size: .82rem;
+    }
+
+    /* ---------- Projects ---------- */
+
+    .case {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 30px 0;
+    }
+
+    .case-num {
+        padding-top: 0;
+        font-size: .8rem;
+    }
+
+    .case-title {
+        font-size: 1.35rem;
+        margin-bottom: 12px;
+    }
+
+    .case-desc {
+        max-width: 100%;
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+    .tag-row {
+        gap: 8px;
+    }
+
+    .tag {
+        font-size: .72rem;
+        padding: 5px 9px;
+    }
+
+    .case-link {
+        display: inline-flex;
+        margin-bottom: 8px;
+        word-break: break-word;
+    }
+
+}
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width: 480px) {
+
+    .stack-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stack-cell {
+        padding: 20px 12px;
+    }
+
+    .stack-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .stack-name {
+        font-size: .78rem;
+    }
+
+    .case-title {
+        font-size: 1.2rem;
+    }
+
+    .case-desc {
+        font-size: .9rem;
+    }
+
+}
+
+/* ===========================
+   CONTACT + FOOTER MOBILE FIX
+=========================== */
+
+@media (max-width: 768px) {
+
+    .contact-box {
+        padding: 36px 20px;
+        border-radius: 14px;
+    }
+
+    .contact-box h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .contact-box p {
+        font-size: .95rem;
+        margin-bottom: 24px;
+    }
+
+    .email-link {
+        display: inline-block;
+        font-size: 1rem;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .social-row {
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+    }
+
+    .social-row a {
+        font-size: .9rem;
+    }
+
+    footer {
+        padding: 28px 0;
+    }
+
+    footer .wrap {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+}
+
+/* Small phones */
+
+@media (max-width: 480px) {
+
+    .contact-box {
+        padding: 28px 16px;
+    }
+
+    .contact-box h2 {
+        font-size: 1.7rem;
+    }
+
+    .contact-box p {
+        font-size: .9rem;
+    }
+
+    .email-link {
+        font-size: .9rem;
+    }
+
+    .social-row {
+        gap: 10px;
+    }
+
+    footer p {
+        font-size: .8rem;
+    }
+
+}

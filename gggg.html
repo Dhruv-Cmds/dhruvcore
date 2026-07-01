@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhruv Sharma | Backend Developer — FastAPI, Python, MySQL</title>
+  <meta name="description"
+    content="Dhruv Sharma is a backend developer specializing in FastAPI, async SQLAlchemy, and MySQL. Building scalable APIs, auth systems, and production-ready backends.">
+  <meta name="keywords"
+    content="Dhruv Sharma, backend developer, FastAPI developer, Python developer, MySQL, backend engineer India">
+  <meta name="author" content="Dhruv Sharma">
+
+  <meta property="og:title" content="Dhruv Sharma | Backend Developer">
+  <meta property="og:description" content="Backend developer building FastAPI systems, APIs, and databases that scale.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dhruv Sharma",
+  "jobTitle": "Backend Developer",
+  "sameAs": [
+    "https://github.com/Dhruv-Cmds"
+  ],
+  "knowsAbout": ["Python", "FastAPI", "MySQL", "Redis", "Docker", "REST APIs"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  }
+}
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D1117;
+      --bg-soft: #12161C;
+      --card: #161B22;
+      --border: #232A34;
+      --text: #EDEFF2;
+      --text-dim: #8B96A5;
+      --accent: #D98E4D;
+      --accent-soft: #3A2E22;
+      --steel: #5C8AA8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      color: var(--text-dim);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      border: 1px solid var(--accent-soft);
+      background: var(--accent-soft);
+      padding: 6px 12px;
+      border-radius: 100px;
+    }
+
+    .badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 120px 0 100px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--steel);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.6rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .fade {
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .hero h1 .accent {
+      color: var(--accent);
+    }
+
+    .hero p.lede {
+      font-size: 1.15rem;
+      color: var(--text-dim);
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn {
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all .2s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1A1206;
+    }
+
+    .btn-primary:hover {
+      background: #E8A567;
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+      color: var(--text-dim);
+    }
+
+    .meta-row span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* TERMINAL SIGNATURE */
+    .terminal {
+      margin-top: 60px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      max-width: 640px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-soft);
+    }
+
+    .terminal-bar .tdot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .t1 {
+      background: #FF5F56;
+    }
+
+    .t2 {
+      background: #FFBD2E;
+    }
+
+    .t3 {
+      background: #27C93F;
+    }
+
+    .terminal-bar span {
+      margin-left: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .terminal-body {
+      padding: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    .terminal-body .line {
+      margin-bottom: 8px;
+    }
+
+    .prompt {
+      color: var(--steel);
+    }
+
+    .cmd {
+      color: var(--text);
+    }
+
+    .resp-key {
+      color: var(--accent);
+    }
+
+    .resp-str {
+      color: #7FCDA8;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 7px;
+      height: 14px;
+      background: var(--accent);
+      animation: blink 1s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* SECTION HEADERS */
+    .section {
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-head {
+      margin-bottom: 56px;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -0.02em;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-grid p {
+      color: var(--text-dim);
+      margin-bottom: 18px;
+      font-size: 1.02rem;
+    }
+
+    .fact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .fact {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .fact-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--steel);
+      margin-bottom: 6px;
+    }
+
+    .fact-value {
+      font-size: 0.98rem;
+    }
+
+    /* SKILLS MARQUEE */
+    .marquee-wrap {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
+      background: var(--bg-soft);
+    }
+
+    .marquee {
+      display: flex;
+      gap: 48px;
+      width: max-content;
+      animation: scroll 28s linear infinite;
+    }
+
+    .marquee span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .marquee span::before {
+      content: '/';
+      color: var(--accent);
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* TECH STACK GRID */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .stack-cell {
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+      transition: background .2s;
+    }
+
+    .stack-cell:hover {
+      background: var(--card);
+    }
+
+    .stack-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+    }
+
+    .stack-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.6;
+    }
+
+    .stack-cell:hover .stack-icon {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .stack-name {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+    }
+
+    @media(max-width:900px) {
+      .stack-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media(max-width:560px) {
+      .stack-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* PROJECTS */
+    .case {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case:last-child {
+      border-bottom: none;
+    }
+
+    .case-num {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      padding-top: 4px;
+    }
+
+    .case-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .case-desc {
+      color: var(--text-dim);
+      margin-bottom: 16px;
+      max-width: 640px;
+    }
+
+    .tag-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 5px 10px;
+      border-radius: 6px;
+      color: var(--steel);
+    }
+
+    .case-link {
+      font-size: 0.9rem;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .case-link:hover {
+      text-decoration: underline;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 64px 48px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-box p {
+      color: var(--text-dim);
+      margin-bottom: 32px;
+    }
+
+    .email-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.3rem;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent-soft);
+      padding-bottom: 4px;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 36px;
+      font-size: 0.9rem;
+    }
+
+    .social-row a {
+      color: var(--text-dim);
+    }
+
+    .social-row a:hover {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer p {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    @media(max-width:768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 44px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="wrap">
+      <div class="logo">dhruv<span>.</span></div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#stack">Stack</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+        <span class="badge"><span class="dot"></span>Open to work</span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-eyebrow">// backend developer</div>
+      <h1>I build backend systems<br><span class="fade">that</span> <span class="accent">scale, hold up,</span><br>and
+        ship.</h1>
+      <p class="lede">FastAPI, async SQLAlchemy, and MySQL — I design APIs, auth, and infrastructure that don't fall
+        over in production.</p>
+      <div class="cta-row">
+        <a href="#work" class="btn btn-primary">View Work</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+      <div class="meta-row">
+        <span>📍 Gujarat, India</span>
+        <span>⚙️ Python · FastAPI · MySQL</span>
+        <span>🔗 github.com/Dhruv-Cmds</span>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="tdot t1"></div>
+          <div class="tdot t2"></div>
+          <div class="tdot t3"></div>
+          <span>bash</span>
+        </div>
+        <div class="terminal-body">
+          <div class="line"><span class="prompt">$</span> <span class="cmd">curl -X POST /api/v1/auth/login</span></div>
+          <div class="line" style="color:var(--text-dim);">→ 200 OK · 84ms</div>
+          <div class="line">{</div>
+          <div class="line">&nbsp;&nbsp;<span class="resp-key">"status"</span>: <span
+              class="resp-str">"authenticated"</span>,</div>
+          <div class="line">&nbsp;&nbsp;<span class="resp-key">"role"</span>: <span class="resp-str">"admin"</span>,
+          </div>
+          <div class="line">&nbsp;&nbsp;<span class="resp-key">"token"</span>: <span
+              class="resp-str">"eyJhbGciOi..."</span></div>
+          <div class="line">}</div>
+          <div class="line"><span class="prompt">$</span> <span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Python</span><span>FastAPI</span><span>MySQL</span><span>Redis</span><span>Docker</span><span>Async
+        SQLAlchemy</span><span>JWT Auth</span><span>Linux</span><span>Git</span><span>CI/CD</span>
+      <span>Python</span><span>FastAPI</span><span>MySQL</span><span>Redis</span><span>Docker</span><span>Async
+        SQLAlchemy</span><span>JWT Auth</span><span>Linux</span><span>Git</span><span>CI/CD</span>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">// about</div>
+        <h2>Backend-first, detail-obsessed.</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>I'm a backend developer who likes systems that are boring in the right way — predictable, well-tested, and
+            easy to reason about at 2am when something breaks.</p>
+          <p>Most of what I build lives around FastAPI, async SQLAlchemy, and MySQL — APIs with real auth, real
+            role-based access, and deployment pipelines that actually deploy.</p>
+          <p>Outside of shipping projects, I spend time on LeetCode sharpening the fundamentals, because clean
+            architecture and good algorithms come from the same place.</p>
+        </div>
+        <div class="fact-list">
+          <div class="fact">
+            <div class="fact-label">FOCUS</div>
+            <div class="fact-value">Backend APIs & System Design</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">CURRENTLY</div>
+            <div class="fact-value">Building production-grade backend systems</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">BASED IN</div>
+            <div class="fact-value">Gujarat, India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="stack">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">// tech stack</div>
+        <h2>What I build with</h2>
+      </div>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <path
+              d="M12 2a4 4 0 0 0-4 4v2h8v1H6a4 4 0 0 0-4 4v2a4 4 0 0 0 4 4h1v-3a3 3 0 0 1 3-3h6a3 3 0 0 0 3-3V6a4 4 0 0 0-4-4h-3z" />
+            <circle cx="9" cy="5.5" r=".5" fill="currentColor" />
+            <circle cx="15" cy="18.5" r=".5" fill="currentColor" />
+          </svg></div>
+        <div class="stack-name">Python</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
+          </svg></div>
+        <div class="stack-name">FastAPI</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <ellipse cx="12" cy="5" rx="8" ry="3" />
+            <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
+            <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+          </svg></div>
+        <div class="stack-name">MySQL</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <path d="M12 3 4 7l8 4 8-4-8-4z" />
+            <path d="m4 12 8 4 8-4" />
+            <path d="m4 17 8 4 8-4" />
+          </svg></div>
+        <div class="stack-name">Redis</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <rect x="2" y="10" width="4" height="4" />
+            <rect x="7" y="10" width="4" height="4" />
+            <rect x="12" y="10" width="4" height="4" />
+            <rect x="7" y="5" width="4" height="4" />
+            <path d="M2 14c0 4 4 6 9 6 6 0 10-3 11-8-1 0-2 .5-3 .5-1-1.5-3-1.5-3-1.5" />
+          </svg></div>
+        <div class="stack-name">Docker</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <path d="M6 3h12v4l-6 5 6 5v4H6v-4l6-5-6-5V3z" />
+          </svg></div>
+        <div class="stack-name">Async SQLAlchemy</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <circle cx="8" cy="15" r="4" />
+            <path d="M11 12l9-9" />
+            <path d="M17 6l3 3" />
+            <path d="M14 9l2.5 2.5" />
+          </svg></div>
+        <div class="stack-name">JWT Auth</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="14" rx="2" />
+            <path d="m7 9 3 3-3 3" />
+            <line x1="12" y1="15" x2="17" y2="15" />
+          </svg></div>
+        <div class="stack-name">Linux</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <circle cx="6" cy="6" r="2.2" />
+            <circle cx="6" cy="18" r="2.2" />
+            <circle cx="18" cy="9" r="2.2" />
+            <path d="M6 8.2V15.8" />
+            <path d="M8 6.8C11 6.8 12 7.5 12 9.5V9" />
+            <path d="M8 6.8h6a2 2 0 0 1 2 2v.2" />
+          </svg></div>
+        <div class="stack-name">Git</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <path d="M21 12a9 9 0 1 1-3-6.7" />
+            <path d="M21 3v6h-6" />
+          </svg></div>
+        <div class="stack-name">CI/CD</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <line x1="5" y1="20" x2="5" y2="12" />
+            <line x1="10" y1="20" x2="10" y2="8" />
+            <line x1="15" y1="20" x2="15" y2="14" />
+            <line x1="20" y1="20" x2="20" y2="4" />
+          </svg></div>
+        <div class="stack-name">k6 Load Testing</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-icon"><svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="m8 12 3 3 5-6" />
+          </svg></div>
+        <div class="stack-name">pytest</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">// selected work</div>
+        <h2>Case studies</h2>
+      </div>
+
+      <div class="case">
+        <div class="case-num">01</div>
+        <div>
+          <h3 class="case-title">FastAPI Banking System</h3>
+          <p class="case-desc">A production-ready banking backend with JWT authentication, role-based access control,
+            and a full CI/CD pipeline deployed to a live VPS.</p>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">Async SQLAlchemy</span><span class="tag">JWT</span><span
+              class="tag">Docker</span><span class="tag">CI/CD</span>
+          </div>
+          <a href="https://github.com/Dhruv-Cmds" class="case-link" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="case-num">02</div>
+        <div>
+          <h3 class="case-title">Delivery Management System</h3>
+          <p class="case-desc">A food delivery backend handling payment processing, real-time notifications, and
+            delivery partner management end to end.</p>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">MySQL</span><span class="tag">Payments</span><span
+              class="tag">Notifications</span>
+          </div>
+          <a href="https://github.com/Dhruv-Cmds" class="case-link" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="case-num">03</div>
+        <div>
+          <h3 class="case-title">University Management System</h3>
+          <p class="case-desc">A full backend system verified with pytest and load-tested with k6, deployed to a VPS to
+            simulate real-world traffic conditions.</p>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">pytest</span><span class="tag">k6</span><span
+              class="tag">MySQL</span>
+          </div>
+          <a href="https://github.com/Dhruv-Cmds" class="case-link" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="case-num">04</div>
+        <div>
+          <h3 class="case-title">Python OS Simulator</h3>
+          <p class="case-desc">A terminal-based operating system simulator demonstrating process management, file
+            systems, and OOP design principles.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">OOP</span><span class="tag">CLI</span>
+          </div>
+          <a href="https://github.com/Dhruv-Cmds" class="case-link" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Let's build something.</h2>
+        <p>Open to backend roles, freelance work, and interesting problems.</p>
+        <a href="mailto:you@example.com" class="email-link mono">you@example.com</a>
+        <div class="social-row">
+          <a href="https://github.com/Dhruv-Cmds" target="_blank">GitHub</a>
+          <a href="#" target="_blank">LinkedIn</a>
+          <a href="#" target="_blank">LeetCode</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 Dhruv. Built with HTML & CSS.</p>
+      <p class="mono">Gujarat, India</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

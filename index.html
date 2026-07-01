@@ -4,330 +4,524 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dhruv Patel Backend Developer Portfolio">
-    <meta name="author" content="Dhruv Patel">
+    <title>Dhruv Patel | Backend Developer — FastAPI, Python, MySQL</title>
+    <meta name="description"
+        content="Dhruv Sharma is a backend developer specializing in FastAPI, async SQLAlchemy, and MySQL. Building scalable APIs, auth systems, and production-ready backends.">
+    <meta name="keywords"
+        content="Dhruv Sharma, backend developer, FastAPI developer, Python developer, MySQL, backend engineer India">
+    <meta name="author" content="Dhruv Sharma">
 
-    <title>Dhruv Patel | Backend Developer</title>
+    <meta property="og:title" content="Dhruv Sharma | Backend Developer">
+    <meta property="og:description"
+        content="Backend developer building FastAPI systems, APIs, and databases that scale.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Dhruv Sharma",
+            "jobTitle": "Backend Developer",
+            "sameAs": [
+                "https://github.com/Dhruv-Cmds"
+            ],
+            "knowsAbout": ["Python", "FastAPI", "MySQL", "Redis", "Docker", "REST APIs"],
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Gujarat",
+                "addressCountry": "IN"
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
 </head>
 
 <body>
 
-    <canvas id="particles"></canvas>
-
-    <!-- HEADER -->
-    <header>
-
-        <h1>Dhruv Patel</h1>
-
-        <p class="subtitle">Backend Developer | FastAPI & System Design</p>
-
-        <p class="tagline">
-            I build backend systems that behave like real-world machines —
-            secure, scalable, and grounded in solid logic.
-        </p>
-
-        <div class="badges">
-            <span>FastAPI</span>
-            <span>System Design</span>
-            <span>Databases</span>
-            <span>Secure APIs</span>
-        </div>
-
-        <a class="btn" href="https://github.com/Dhruv-Cmds" target="_blank">
-        View GitHub
-        </a>
-
-    </header>
-
-    <!-- NAV -->
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#links">Links</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="wrap">
+
+            <div class="logo">Dhruv</div>
+
+            <div class="nav-links">
+
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+
+                <span class="badge"><span class="dot"></span>Open to work</span>
+
+            </div>
+        </div>
     </nav>
 
-    <!-- MAIN -->
-    <main>
+    <section class="hero">
 
-        <!-- ABOUT -->
-        <section id="about">
+        <div class="wrap">
 
-            <h2>About Me</h2>
+            <h1>
+                I Build Backend Systems
+                <br>
+                <span class="fade">that</span>
+                <span class="accent">scale, hold up,</span>
+                <br>and ship.
+            </h1>
 
-            <p>
-                I’m a backend-focused developer who builds scalable systems using Python, FastAPI, SQL databases, and async architectures. 
-                I enjoy designing APIs, managing data flow, and solving infrastructure-oriented backend challenges.
-                I enjoy building APIs, managing databases, and writing modular code that mirrors real-world logic.
+            <p class="lede">FastAPI, async SQLAlchemy, and MySQL — I design APIs, auth, and infrastructure that don't
+                fall over in production.
             </p>
 
-            <h3 class="left-heading">What I focus on:</h3>
+            <div class="cta-row">
+                <a href="#work" class="btn btn-primary">View Work</a>
+                <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+            </div>
 
-            <ul class="about-list">
-                <li>Backend architecture</li>
-                <li>API development</li>
-                <li>Database design</li>
-                <li>System-level thinking</li>
-            </ul>
+            <div class="meta-row">
+                <span>📍 Gujarat, India</span>
+                <span>⚙️ Python · FastAPI · MySQL</span>
+                <span>🔗 github.com/Dhruv-Cmds</span>
+            </div>
 
-            <p>I’m currently expanding into web development while continuing to build backend-heavy systems.</p>
+            <div class="terminal">
 
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills">
-
-            <h2>Technical Skills</h2>
-
-            <div class="skills-grid">
-
-                <div class="skill-group">
-                    <h3>Languages</h3>
-                    <ul class="badges">
-                        <li>Python</li>
-                        <li>Java</li>
-                    </ul>
+                <div class="terminal-bar">
+                    <div class="tdot t1"></div>
+                    <div class="tdot t2"></div>
+                    <div class="tdot t3"></div>
+                    <span>bash</span>
                 </div>
 
-                <div class="skill-group">
-                    <h3>Web</h3>
-                    <ul class="badges">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                    </ul>
-                </div>
+                <div class="terminal-body">
 
-                <div class="skill-group">
-                    <h3>Databases</h3>
-                    <ul class="badges">
-                        <li>MySQL</li>
-                        <!-- <li>Postgresql</li> -->
-                        <li>SQL</li>
-                    </ul>
-                </div>
+                    <div class="line">
+                        <span class="prompt">$</span>
+                        <span class="cmd">curl -X POST
+                            /api/v1/auth/login
+                        </span>
+                    </div>
 
-                <div class="skill-group">
-                    <h3>Frameworks</h3>
-                    <ul class="badges">
-                        <li>FastAPI</li>
-                    </ul>
-                </div>
+                    <div class="line" style="color:var(--text-dim);">→ 200 OK · 84ms</div>
 
-                <div class="skill-group">
-                    <h3>Tools</h3>
-                    <ul class="badges">
-                        <li>Git</li>
-                        <li>GitHub</li>
-                        <li>Docker</li>
-                        <li>Postman</li>
-                        <li>VS Code</li>
-                        <li>IntelliJ</li>
-                        <li>Data Grip</li>
-                        <li>DBeaver</li>
-                    </ul>
+                    <div class="line">{</div>
+
+                    <div class="line">&nbsp;&nbsp;
+                        <span class="resp-key">"status"</span>: <span class="resp-str">"authenticated"
+                        </span>,
+                    </div>
+
+                    <div class="line">&nbsp;&nbsp;
+                        <span class="resp-key">"role"</span>: <span class="resp-str">"admin"
+                        </span>,
+                    </div>
+
+                    <div class="line">&nbsp;&nbsp;
+                        <span class="resp-key">"token"</span>: <span class="resp-str">"eyJhbGciOi..."
+                        </span>
+                    </div>
+
+                    <div class="line">}</div>
+
+                    <div class="line">
+                        <span class="prompt">$</span>
+                        <span class="cursor"></span>
+                    </div>
+
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-wrap">
+
+        <div class="marquee">
+
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>MySQL</span>
+            <span>Redis</span>
+            <span>Docker</span>
+            <span>Async SQLAlchemy</span>
+            <span>JWT Auth</span>
+            <span>Linux</span>
+            <span>Git</span>
+            <span>CI/CD</span>
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>MySQL</span>
+            <span>Redis</span>
+            <span>Docker</span>
+            <span>Async SQLAlchemy</span>
+            <span>JWT Auth</span>
+            <span>Linux</span>
+            <span>Git</span>
+            <span>CI/CD</span>
+
+        </div>
+    </div>
+
+    <section class="section" id="about">
+
+        <div class="wrap">
+
+            <div class="section-head">
+
+                <h2>Backend-first, detail-obsessed.</h2>
 
             </div>
 
-        </section>
+            <div class="about-grid">
 
-        <!-- PROJECTS -->
-        <section id="projects">
-
-            <h2>Projects</h2>
-
-            <div class="projects-grid">
-
-                <article class="project-card">
-                    <h3>🏦 Banking System API</h3>
-                    
-                    <p>
-                        Production-style banking backend built with FastAPI, 
-                        Async SQLAlchemy, MySQL, and Docker, focused on transactional safety, 
-                        scalable architecture, and infrastructure-aware backend engineering.
-                    </p>
-                    <a href="bankingsystem.html" target="_blank">View Project →</a>
-                </article>
-
-                <article class="project-card">
-                    <h3>🎓 University Management System API</h3>
-                    
-                    <p>
-                        Production-style university management backend built with FastAPI, Async SQLAlchemy,
-                        MySQL, and Docker, focused on RBAC authorization, scalable API architecture,
-                        and infrastructure-aware backend engineering.
+                <div>
+                    <p>I'm a backend developer who likes systems that are boring in the right way — predictable,
+                        well-tested, and easy to reason about something breaks.
                     </p>
 
-                    <a href="universitymanagement.html" target="_blank">View Project →</a>
-                </article>
-
-                <article class="project-card">
-                    <h3>💻 OS Simulator</h3>
-                    <p>
-                        CLI-based operating system simulation with command parsing,
-                        file handling, process management, and memory allocation logic.
+                    <p>Most of what I build lives around FastAPI, async SQLAlchemy, and MySQL — APIs with real auth,
+                        real role-based access, and deployment pipelines that actually deploy.
                     </p>
-                    <a href="os.html" target="_blank">View Project →</a>
-                </article>
 
-                <article class="project-card">
-                    <h3>🏧 ATM System</h3>
-                    <p>
-                        Secure ATM simulation with PIN authentication, transaction validation,
-                        and persistent storage using file systems.
-                    </p>
-                    <a href="atm.html" target="_blank">View Project →</a>
-                </article>
+                </div>
 
-                <article class="project-card">
-                    <h3>🗄️ Mini Database Engine</h3>
-                    <p>
-                        Lightweight database engine supporting CRUD operations,
-                        table management, and JSON-based storage.
-                    </p>
-                    <a href="db.html" target="_blank">View Project →</a>
-                </article>
+                <div class="fact-list">
+
+                    <div class="fact">
+
+                        <div class="fact-label">FOCUS</div>
+
+                        <div class="fact-value">Backend APIs & System Design</div>
+
+                    </div>
+
+                    <div class="fact">
+
+                        <div class="fact-label">CURRENTLY</div>
+
+                        <div class="fact-value">Building production-grade backend systems</div>
+
+                    </div>
+
+                    <div class="fact">
+
+                        <div class="fact-label">BASED IN</div>
+
+                        <div class="fact-value">Gujarat, India</div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="stack">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>What I build with</h2>
+            </div>
+        </div>
+        <div class="stack-grid">
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2a4 4 0 0 0-4 4v2h8v1H6a4 4 0 0 0-4 4v2a4 4 0 0 0 4 4h1v-3a3 3 0 0 1 3-3h6a3 3 0 0 0 3-3V6a4 4 0 0 0-4-4h-3z" />
+                        <circle cx="9" cy="5.5" r=".5" fill="currentColor" />
+                        <circle cx="15" cy="18.5" r=".5" fill="currentColor" />
+                    </svg></div>
+                <div class="stack-name">Python</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
+                    </svg></div>
+                <div class="stack-name">FastAPI</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <ellipse cx="12" cy="5" rx="8" ry="3" />
+                        <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
+                        <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+                    </svg></div>
+                <div class="stack-name">MySQL</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <path d="M12 3 4 7l8 4 8-4-8-4z" />
+                        <path d="m4 12 8 4 8-4" />
+                        <path d="m4 17 8 4 8-4" />
+                    </svg></div>
+                <div class="stack-name">Redis</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <rect x="2" y="10" width="4" height="4" />
+                        <rect x="7" y="10" width="4" height="4" />
+                        <rect x="12" y="10" width="4" height="4" />
+                        <rect x="7" y="5" width="4" height="4" />
+                        <path d="M2 14c0 4 4 6 9 6 6 0 10-3 11-8-1 0-2 .5-3 .5-1-1.5-3-1.5-3-1.5" />
+                    </svg></div>
+                <div class="stack-name">Docker</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <path d="M6 3h12v4l-6 5 6 5v4H6v-4l6-5-6-5V3z" />
+                    </svg></div>
+                <div class="stack-name">Async SQLAlchemy</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <circle cx="8" cy="15" r="4" />
+                        <path d="M11 12l9-9" />
+                        <path d="M17 6l3 3" />
+                        <path d="M14 9l2.5 2.5" />
+                    </svg></div>
+                <div class="stack-name">JWT Auth</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="14" rx="2" />
+                        <path d="m7 9 3 3-3 3" />
+                        <line x1="12" y1="15" x2="17" y2="15" />
+                    </svg></div>
+                <div class="stack-name">Linux</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <circle cx="6" cy="6" r="2.2" />
+                        <circle cx="6" cy="18" r="2.2" />
+                        <circle cx="18" cy="9" r="2.2" />
+                        <path d="M6 8.2V15.8" />
+                        <path d="M8 6.8C11 6.8 12 7.5 12 9.5V9" />
+                        <path d="M8 6.8h6a2 2 0 0 1 2 2v.2" />
+                    </svg></div>
+                <div class="stack-name">Git</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <path d="M21 12a9 9 0 1 1-3-6.7" />
+                        <path d="M21 3v6h-6" />
+                    </svg></div>
+                <div class="stack-name">CI/CD</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <line x1="5" y1="20" x2="5" y2="12" />
+                        <line x1="10" y1="20" x2="10" y2="8" />
+                        <line x1="15" y1="20" x2="15" y2="14" />
+                        <line x1="20" y1="20" x2="20" y2="4" />
+                    </svg></div>
+                <div class="stack-name">k6 Load Testing</div>
+            </div>
+            <div class="stack-cell">
+                <div class="stack-icon"><svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="m8 12 3 3 5-6" />
+                    </svg></div>
+                <div class="stack-name">pytest</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="work">
+
+        <div class="wrap">
+
+            <div class="section-head">
+
+                <h2>Case studies</h2>
 
             </div>
 
-        </section>
+            <div class="case">
 
+                <div class="case-num">01</div>
 
-        <section id="engineering">
+                <div>
 
-            <h2>Engineering Focus</h2>
+                    <h3 class="case-title">FastAPI Banking System</h3>
 
-            <ul class="about-list">
-                <li>Async backend systems using FastAPI & SQLAlchemy</li>
-                <li>Transactional integrity & database consistency</li>
-                <li>Dockerized infrastructure & environment management</li>
-                <li>Load testing & backend performance analysis</li>
-                <li>Scalable API architecture & RBAC authorization</li>
-            </ul>
+                    <p class="case-desc">A production-ready banking backend with JWT authentication, role-based access
+                        control, and a full CI/CD pipeline deployed to a live VPS.
+                    </p>
 
-        </section>
+                    <div class="tag-row">
 
-        <!-- CURRENTLY BUILDING -->
-        <section id="learning">
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Async SQLAlchemy</span>
+                        <span class="tag">JWT</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">CI/CD</span>
 
-            <h2>Currently Building</h2>
+                    </div>
 
-            <ul class="badges">
-                <li>Async Backend Architecture</li>
-                <li>System Design Fundamentals</li>
-                <li>Scalable API Engineering</li>
-                <li>Docker & Infrastructure Workflows</li>
-            </ul>
+                    <div>
+                        <a href="https://bank.dhruvcore.com" class="case-link" target="_blank">View on Site →</a>
+                    </div>
 
-        </section>
+                    <div>
+                        <a href="https://github.com/Dhruv-Cmds/fastapi-banking-system" class="case-link"
+                            target="_blank">View on GitHub →</a>
+                    </div>
 
-        <!-- LINKS -->
-        <section id="links">
+                </div>
+            </div>
 
-            <h2>Links</h2>
+            <div class="case">
 
-            <p>
-                GitHub:
-                <a href="https://github.com/Dhruv-Cmds" target="_blank">GitHub Profile</a>
-            </p>
+                <div class="case-num">02</div>
 
-            <p>
-                LinkedIn:
-                <a href="https://www.linkedin.com/in/patel-dhruv-a77a313b4/" target="_blank">LinkedIn Profile</a>
-            </p>
+                <div>
 
-            <p>
-                Leetcode:
-                <a href="https://leetcode.com/u/d_h_r_uv_13/" target="_blank">Leetcode Profile</a>
-            </p>
+                    <h3 class="case-title">Delivery Management System</h3>
 
-        </section>
+                    <p class="case-desc">A food delivery backend handling payment processing, real-time notifications,
+                        and delivery partner management end to end.
+                    </p>
 
-        <!-- GITHUB STATS -->
-        <section id="github">
+                    <div class="tag-row">
 
-            <h2>GitHub Stats</h2>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Payments</span>
+                        <span class="tag">Notifications</span>
 
-            <p align="center">
-                <img height="180em"
-                    src="https://github-readme-stats-sigma-five.vercel.app/api?username=Dhruv-Cmds&show_icons=true&theme=dark">
+                    </div>
 
-                <img height="180em"
-                    src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Dhruv-Cmds&layout=compact&theme=dark">
-            </p>
+                    <div>
+                        <a href="https://github.com/Dhruv-Cmds/Delivery-System" class="case-link" target="_blank">View
+                            on GitHub →</a>
+                    </div>
 
-        </section>
+                </div>
+            </div>
 
-        <!-- CONTACT -->
-        <section id="contact">
+            <div class="case">
 
-            <h2>Contact</h2>
+                <div class="case-num">03</div>
 
-            <address>
-                <p>
-                    Email:
-                    <a href="mailto:pd1900565@gmail.com">pd1900565@gmail.com</a>
-                </p>
-            </address>
+                <div>
+                    <h3 class="case-title">University Management System</h3>
 
-        </section>
+                    <p class="case-desc">A full backend system verified with pytest and load-tested with k6, deployed to
+                        a VPS to simulate real-world traffic conditions.
+                    </p>
 
-    </main>
+                    <div class="tag-row">
 
-    <!-- FOOTER -->
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">pytest</span>
+                        <span class="tag">k6</span>
+                        <span class="tag">MySQL</span>
+
+                    </div>
+
+                    <div>
+                        <a href="https://ums.dhruvcore.com" class="case-link" target="_blank">View on Site →</a>
+                    </div>
+
+                    <div>
+                        <a href="https://github.com/Dhruv-Cmds/University-Management" class="case-link"
+                            target="_blank">View on GitHub →</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="case">
+
+                <div class="case-num">04</div>
+
+                <div>
+                    <h3 class="case-title">Python OS Simulator</h3>
+
+                    <p class="case-desc">A terminal-based operating system simulator demonstrating process management,
+                        file systems, and OOP design principles.
+                    </p>
+
+                    <div class="tag-row">
+
+                        <span class="tag">Python</span>
+                        <span class="tag">OOP</span>
+                        <span class="tag">CLI</span>
+
+                    </div>
+
+                    <a href="https://github.com/Dhruv-Cmds/Python-os-simulator" class="case-link" target="_blank">View
+                        on GitHub →</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+
+        <div class="wrap">
+
+            <div class="contact-box">
+
+                <h2>Let's build something.</h2>
+
+                <p>Open to backend roles, freelance work, and interesting problems.</p>
+
+                <a href="mailto:pd1900565@gmail.com" class="email-link mono">pd1900565@gmail.com</a>
+
+                <div class="social-row">
+                    <a href="https://github.com/Dhruv-Cmds" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/patel-dhruv-a77a313b4/" target="_blank">LinkedIn</a>
+                    <a href="https://leetcode.com/u/d_h_r_uv_13/" target="_blank">Leetcode</a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <footer>
 
-        <p>© <time datetime="2026">2026</time> Dhruv Patel</p>
+        <div class="wrap">
+            <p>© 2026 Dhruv</p>
+            <p class="mono">Gujarat, India</p>
+        </div>
 
     </footer>
 
-    <script>
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<80;i++){
-    particles.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: Math.random()*2,
-        dx: (Math.random()-0.5)*0.5,
-        dy: (Math.random()-0.5)*0.5
-    });
-}
-
-function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    particles.forEach(p=>{
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle="#7b5cff";
-        ctx.fill();
-
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if(p.x<0||p.x>canvas.width) p.dx*=-1;
-        if(p.y<0||p.y>canvas.height) p.dy*=-1;
-    });
-
-    requestAnimationFrame(draw);
-}
-
-draw();
-
-
-</script>
+    <div id="devtools-block">
+        <div class="dt-card">
+            <div class="dt-icon"><svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <circle cx="12" cy="16" r=".5" fill="currentColor" />
+                </svg></div>
+            <div class="dt-eyebrow">ACCESS RESTRICTED</div>
+            <h2 class="dt-title">Dev Tools <em>detected</em></h2>
+            <p class="dt-desc">Curious about how this was built? Let's connect and chat about it.</p>
+            <a href="#" onclick="location.reload();return false;" class="dt-btn dt-btn-primary">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7" />
+                    <path d="M9 22V12h6v10" />
+                </svg>
+                Return Home
+            </a>
+            <a href="mailto:you@example.com" class="dt-btn dt-btn-ghost">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 4h16v16H4z" />
+                    <path d="m4 4 8 8 8-8" />
+                </svg>
+                Get in Touch
+            </a>
+            <div class="dt-footer">© 2026 Dhruv Sharma</div>
+        </div>
+    </div>
 
 </body>
 
