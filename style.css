@@ -92,6 +92,28 @@ nav .wrap {
     color: var(--text);
 }
 
+/* Hamburger toggle (for use with a mobile nav-links panel) */
+.nav-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav-toggle svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+}
+
 .badge {
     display: inline-flex;
     align-items: center;
@@ -139,7 +161,7 @@ nav .wrap {
 }
 
 .hero h1 {
-    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    font-size: clamp(2rem, 5vw + 1rem, 4.6rem);
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.03em;
@@ -217,6 +239,7 @@ nav .wrap {
     border: 1px solid var(--border);
     border-radius: 12px;
     max-width: 640px;
+    width: 100%;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
@@ -234,6 +257,7 @@ nav .wrap {
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .t1 {
@@ -253,16 +277,21 @@ nav .wrap {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--text-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .terminal-body {
     padding: 20px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
+    overflow-x: auto;
 }
 
 .terminal-body .line {
     margin-bottom: 8px;
+    word-break: break-word;
 }
 
 .prompt {
@@ -318,14 +347,14 @@ nav .wrap {
 }
 
 .section-head h2 {
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-size: clamp(1.5rem, 3vw + 1rem, 2.6rem);
     letter-spacing: -0.02em;
 }
 
 /* ABOUT */
 .about-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
     gap: 60px;
     align-items: start;
 }
@@ -358,6 +387,7 @@ nav .wrap {
 
 .fact-value {
     font-size: 0.98rem;
+    word-break: break-word;
 }
 
 /* SKILLS MARQUEE */
@@ -435,6 +465,7 @@ nav .wrap {
     align-items: center;
     justify-content: center;
     color: var(--text);
+    flex-shrink: 0;
 }
 
 .stack-icon svg {
@@ -455,22 +486,10 @@ nav .wrap {
     color: var(--text-dim);
 }
 
-@media(max-width:900px) {
-    .stack-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media(max-width:560px) {
-    .stack-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 /* PROJECTS */
 .case {
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: minmax(40px, 80px) minmax(0, 1fr);
     gap: 24px;
     padding: 36px 0;
     border-bottom: 1px solid var(--border);
@@ -488,7 +507,7 @@ nav .wrap {
 }
 
 .case-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2vw + 0.8rem, 1.5rem);
     margin-bottom: 10px;
     letter-spacing: -0.01em;
 }
@@ -516,7 +535,7 @@ nav .wrap {
     color: rgb(117, 225, 244);
 }
 
-.tag:hover{
+.tag:hover {
     color: rgb(0, 217, 255);
 }
 
@@ -537,7 +556,7 @@ nav .wrap {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 64px 48px;
+    padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 48px);
     text-align: center;
 }
 
@@ -554,16 +573,18 @@ nav .wrap {
 
 .email-link {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2vw + 0.6rem, 1.3rem);
     color: var(--accent);
     border-bottom: 2px solid var(--accent-soft);
     padding-bottom: 4px;
+    word-break: break-word;
 }
 
 .social-row {
     display: flex;
     gap: 24px;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 36px;
     font-size: 0.9rem;
 }
@@ -594,26 +615,7 @@ footer p {
     font-size: 0.85rem;
 }
 
-@media(max-width:768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .case {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-box {
-        padding: 44px 24px;
-    }
-}
-
-
-/* ===== RESPONSIVE / ZOOM FIX ===== */
+/* ===== BASE RESPONSIVE / ZOOM FIX ===== */
 
 html {
     overflow-x: hidden;
@@ -624,44 +626,110 @@ body {
     min-width: 320px;
 }
 
-/* Make grids fluid instead of fixed columns */
-.about-grid {
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-}
-
-/* Prevent long content from forcing horizontal scroll */
 .wrap {
     width: 100%;
     padding: 0 clamp(16px, 4vw, 32px);
 }
 
-.hero h1 {
-    font-size: clamp(2rem, 5vw + 1rem, 4.6rem);
+img, svg {
+    max-width: 100%;
+    height: auto;
 }
 
-.section-head h2 {
-    font-size: clamp(1.5rem, 3vw + 1rem, 2.6rem);
+/* ===================================================
+   TABLET (large): ~1024px and below
+   =================================================== */
+@media (max-width: 1024px) {
+    .wrap {
+        padding: 0 28px;
+    }
+
+    .hero {
+        padding: 90px 0 72px;
+    }
+
+    .section {
+        padding: 76px 0;
+    }
+
+    .stack-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-grid {
+        gap: 40px;
+    }
 }
 
-.terminal {
-    width: 100%;
-    max-width: 640px;
+/* ===================================================
+   TABLET (portrait) / large phones: ~768px and below
+   =================================================== */
+@media (max-width: 768px) {
+    nav .wrap {
+        height: 64px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero {
+        padding: 64px 0 56px;
+    }
+
+    .hero p.lede {
+        max-width: 100%;
+        font-size: 1.05rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .case {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 28px 0;
+    }
+
+    .case-num {
+        padding-top: 0;
+    }
+
+    .stack-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-box {
+        border-radius: 12px;
+    }
+
+    .section {
+        padding: 64px 0;
+    }
+
+    .section-head {
+        margin-bottom: 40px;
+    }
+
+    .terminal {
+        margin-top: 44px;
+    }
+
+    .terminal-body {
+        font-size: 0.8rem;
+    }
 }
 
-.case {
-    grid-template-columns: minmax(40px, 80px) minmax(0, 1fr);
-}
-
-.case-title {
-    font-size: clamp(1.2rem, 2vw + 0.8rem, 1.5rem);
-}
-
-.contact-box {
-    padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 48px);
-}
-
-/* Extra breakpoint for very small / heavily zoomed views */
-@media (max-width: 480px) {
+/* ===================================================
+   MOBILE: ~600px and below
+   =================================================== */
+@media (max-width: 600px) {
     .stack-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -677,9 +745,85 @@ body {
 
     .btn {
         text-align: center;
+        width: 100%;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.78rem;
+    }
+
+    .badge {
+        font-size: 0.72rem;
+        padding: 5px 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .fact {
+        padding: 14px 16px;
+    }
+
+    .tag {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+
+    footer .wrap {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .social-row {
+        gap: 16px;
     }
 }
 
+/* ===================================================
+   SMALL PHONES: ~420px and below
+   =================================================== */
+@media (max-width: 420px) {
+    .wrap {
+        padding: 0 16px;
+    }
+
+    .stack-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stack-cell {
+        padding: 24px 12px;
+    }
+
+    .hero h1 {
+        letter-spacing: -0.02em;
+    }
+
+    .terminal-body {
+        padding: 14px;
+        font-size: 0.74rem;
+    }
+
+    .terminal-bar span {
+        max-width: 120px;
+    }
+
+    .contact-box h2 {
+        line-height: 1.15;
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
 
 #devtools-block {
     position: fixed;
@@ -822,4 +966,10 @@ body {
     font-size: 0.78rem;
     color: var(--text-dim);
     opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+    .dt-card {
+        padding: 32px 24px;
+    }
 }
