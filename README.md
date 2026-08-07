@@ -23,8 +23,6 @@ I focus on building real-world applications involving API development, database 
 ## 🚀 Projects Featured
 - 🏦 FastAPI Banking System
 - 🎓 University Management System
-- 🏧 Advanced ATM System
-- 🗄️ Mini Database Engine
 - ⚙️ Python OS Simulator
 
 ## 🎯 Focus Areas

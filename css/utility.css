@@ -1,0 +1,11 @@
+.flex{
+    display: flex;
+}
+
+.jcenter{
+    justify-content: center;
+}
+
+.acenter{
+    align-items: center;
+}
