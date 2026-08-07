@@ -6,8 +6,9 @@
     --text: #EDEFF2;
     --text-dim: #8B96A5;
     --accent: #f64949;
-    --accent-soft: #3a2222;
+    --accent-soft: #2f2727;
     --steel: #5ef447;
+    --white: rgb(222, 222, 222);
 }
 
 * {
@@ -50,13 +51,38 @@ a {
 }
 
 /* NAV */
+
+
 nav {
+
+    display: flex;
+
+    color: var(--color-white);
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+    padding: 10px;
+
     position: sticky;
     top: 0;
     z-index: 100;
+
     background: rgba(13, 17, 23, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
+}
+
+nav a {
+    color: var(--bg);
+    text-decoration: none;
+}
+
+.available-for-work {
+
+    margin-left: 20px;
+
 }
 
 nav .wrap {
@@ -66,73 +92,122 @@ nav .wrap {
     height: 72px;
 }
 
-.logo {
-    font-weight: 700;
-    font-size: 1.9rem;
-    letter-spacing: -0.02em;
-}
-
-.logo span {
-    color: var(--accent);
-}
-
-.nav-links {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-}
-
-.nav-links a {
-    font-size: 0.92rem;
-    color: var(--text-dim);
-    transition: color .2s;
-}
-
-.nav-links a:hover {
-    color: var(--text);
-}
-
-/* Hamburger toggle (for use with a mobile nav-links panel) */
-.nav-toggle {
-    display: none;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: transparent;
-    color: var(--text);
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.nav-toggle svg {
-    width: 20px;
-    height: 20px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 1.8;
-}
 
 .badge {
-    display: inline-flex;
+
+    display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--accent);
+
+    font-family: var(--nav-font);
+    font-size: 20px;
+    font-weight: 400;
+
+    color: white;
+    background: transparent;
+
     border: 1px solid var(--accent-soft);
-    background: var(--accent-soft);
-    padding: 6px 12px;
     border-radius: 100px;
+
+    padding: 8px 20px;
+    transition: 300ms ease;
 }
 
 .badge .dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--steel);
     animation: pulse 2s infinite;
+}
+
+.badge:hover {
+
+    transform: scale(1.1);
+
+    padding: 10px 20px;
+
+    background-color: rgb(2, 2, 2);
+
+    border: 1px solid black;
+    border-radius: 100px;
+
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+    color: var(--white);
+}
+
+.links {
+
+    display: inline-block;
+
+    background: transparent;
+
+    border: 1px solid var(--accent-soft);
+    border-radius: 100px;
+
+    padding: 10px 20px;
+
+    font-family: var(--nav-font);
+    font-size: 25px;
+    font-weight: 500;
+
+}
+
+.links a {
+
+    padding: 0 20px;
+    color: white;
+    transition: 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.links a:hover {
+
+    padding: 10px 20px;
+
+    color: black;
+    background-color: var(--white);
+
+    border: 1px solid black;
+    border-radius: 100px;
+
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+.email a {
+    color: var(--white);
+}
+
+.email {
+
+    background: transparent;
+    border: 1px solid var(--accent-soft);
+    border-radius: 100px;
+    padding: 8px 20px;
+
+    margin-right: 20px;
+    font-family: var(--nav-font);
+    font-weight: 400;
+    font-size: 20px;
+
+    transition: 300ms ease;
+}
+
+.email:hover {
+
+    transform: scale(1.1);
+
+    padding: 10px 20px;
+
+    background-color: rgb(2, 2, 2);
+
+    border: 1px solid black;
+    border-radius: 100px;
+
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+.email:hover a {
+    color: var(--white);
 }
 
 @keyframes pulse {
@@ -201,21 +276,19 @@ nav .wrap {
 }
 
 .btn-primary {
-    background: var(--accent);
+    background: white;
     color: #1A1206;
-}
+    font-weight: 400;
 
-.btn-primary:hover {
-    background: #E8A567;
+    transition: 300ms ease;
 }
 
 .btn-ghost {
     border: 1px solid var(--border);
-    color: var(--text);
-}
-
-.btn-ghost:hover {
-    border-color: var(--accent);
+    color: black;
+    font-weight: 400;
+    background: rgb(255, 132, 0);
+    transition: 300ms ease;
 }
 
 .meta-row {
@@ -365,6 +438,10 @@ nav .wrap {
     font-size: 1.02rem;
 }
 
+.fact-warp{
+    display: flex;
+}
+
 .fact-list {
     display: flex;
     flex-direction: column;
@@ -388,6 +465,13 @@ nav .wrap {
 .fact-value {
     font-size: 0.98rem;
     word-break: break-word;
+}
+
+.sv-icon{
+    position: relative;
+    bottom: 5px;
+    margin-right: 5px;
+    height: 23px;
 }
 
 /* SKILLS MARQUEE */
@@ -631,7 +715,8 @@ body {
     padding: 0 clamp(16px, 4vw, 32px);
 }
 
-img, svg {
+img,
+svg {
     max-width: 100%;
     height: auto;
 }

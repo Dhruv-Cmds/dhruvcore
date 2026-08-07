@@ -1,27 +1,42 @@
-(function () {
-  const overlay = document.getElementById("devtools-block");
-  const threshold = 160;
-  let isOpen = false;
 
-  function check() {
-    const wDiff = window.outerWidth - window.innerWidth > threshold;
-    const hDiff = window.outerHeight - window.innerHeight > threshold;
-    const open = wDiff || hDiff;
+function hovers() {
 
-    if (open !== isOpen) {
-      isOpen = open;
-      overlay.classList.toggle("active", isOpen);
-    }
+  const hover = document.querySelector(".btn-primary");
+  const hover2 = document.querySelector(".btn-ghost");
+
+  if (!hover || !hover2) return
+
+  hover.addEventListener("mouseenter", () => {
+
+    hover.style.backgroundColor = "rgb(255, 132, 0)";
+    hover.style.transform = "scale(1.1)";
+
+    hover2.style.backgroundColor = "white";
+
+  })
+
+  hover2.addEventListener("mouseenter", () => {
+
+    hover.style.backgroundColor = "white";
+
+    hover2.style.backgroundColor = "rgb(255, 132, 0)";
+    hover2.style.transform = "scale(1.1)";
+
+  })
+
+  function restoreButtonColors() {
+
+    hover.style.backgroundColor = "";
+    hover.style.transform = "";
+    
+    hover2.style.backgroundColor = "";
+    hover2.style.transform = "";
+
   }
 
-  setInterval(check, 300);
-  window.addEventListener("resize", check);
+  hover.addEventListener("mouseleave", restoreButtonColors);
+  hover2.addEventListener("mouseleave", restoreButtonColors);
 
-  document.addEventListener("contextmenu", (e) => e.preventDefault());
+}
 
-  document.addEventListener("keydown", (e) => {
-    if (e.ctrlKey && (e.key === "u" || e.key === "U")) {
-      e.preventDefault();
-    }
-  });
-})();
+hovers();
