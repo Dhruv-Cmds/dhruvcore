@@ -445,7 +445,7 @@ nav .wrap {
     font-size: 1.02rem;
 }
 
-.fact-warp{
+.fact-warp {
     display: flex;
 }
 
@@ -474,7 +474,7 @@ nav .wrap {
     word-break: break-word;
 }
 
-.sv-icon{
+.sv-icon {
     position: relative;
     bottom: 5px;
     margin-right: 5px;
@@ -728,35 +728,53 @@ svg {
     height: auto;
 }
 
-/* ===================================================
-   TABLET (large): ~1024px and below
-   =================================================== */
-@media (max-width: 1024px) {
-    .wrap {
-        padding: 0 28px;
+@media (max-width: 992px) {
+
+    nav {
+        justify-content: space-between;
+        padding: 8px 10px;
+        gap: 8px;
     }
 
-    .hero {
-        padding: 90px 0 72px;
+    .available-for-work {
+        margin-left: 0;
+        flex-shrink: 0;
     }
 
-    .section {
-        padding: 76px 0;
+    .badge {
+        gap: 6px;
+        font-size: 14px;
+        padding: 6px 10px;
+        white-space: nowrap;
     }
 
-    .stack-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .links {
+        min-width: 0;
+        padding: 5px 5px;
+        font-size: 15px;
+        white-space: nowrap;
     }
 
-    .about-grid {
-        gap: 40px;
+    .links a {
+        padding: 0 6px;
     }
-}
 
-/* ===================================================
-   TABLET (portrait) / large phones: ~768px and below
-   =================================================== */
-@media (max-width: 768px) {
+    .email {
+        display: flex;
+        padding: 6px 10px;
+        margin-right: 0;
+        align-items: center;
+    }
+
+    .email:hover {
+        border: 1px solid black;
+        border-radius: 100px;
+    }
+
+    .email a {
+        font-size: 15px;
+    }
+
     nav .wrap {
         height: 64px;
     }
@@ -816,96 +834,119 @@ svg {
     .terminal-body {
         font-size: 0.8rem;
     }
+
+    .cta-row {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 56px;
+    }
 }
 
 /* ===================================================
-   MOBILE: ~600px and below
+   TABLET (portrait) / large phones: ~768px and below
    =================================================== */
-@media (max-width: 600px) {
-    .stack-grid {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 480px) {
+    nav {
+        padding: 8px 10px;
+        gap: 8px;
     }
 
-    .meta-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .cta-row {
-        flex-direction: column;
-    }
-
-    .btn {
-        text-align: center;
-        width: 100%;
-    }
-
-    .hero-eyebrow {
-        font-size: 0.78rem;
+    .available-for-work {
+        margin-left: 0;
+        flex-shrink: 0;
     }
 
     .badge {
-        font-size: 0.72rem;
-        padding: 5px 10px;
+        gap: 6px;
+        font-size: 14px;
+        padding: 6px 10px;
+        white-space: nowrap;
     }
 
-    .logo {
-        font-size: 1.5rem;
+    .links {
+        min-width: 0;
+        padding: 5px 5px;
+        font-size: 10px;
+        white-space: nowrap;
     }
 
-    .fact {
-        padding: 14px 16px;
+    .links a {
+        padding: 0 6px;
     }
 
-    .tag {
-        font-size: 0.7rem;
-        padding: 4px 8px;
+    .email {
+        display: none;
     }
 
-    footer .wrap {
-        flex-direction: column;
-        text-align: center;
+    nav .wrap {
+        height: 64px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero {
+        padding: 64px 0 56px;
+    }
+
+    .hero p.lede {
+        max-width: 100%;
+        font-size: 1.05rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .case {
+        grid-template-columns: 1fr;
         gap: 10px;
+        padding: 28px 0;
     }
 
-    .social-row {
-        gap: 16px;
-    }
-}
-
-/* ===================================================
-   SMALL PHONES: ~420px and below
-   =================================================== */
-@media (max-width: 420px) {
-    .wrap {
-        padding: 0 16px;
+    .case-num {
+        padding-top: 0;
     }
 
     .stack-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .stack-cell {
-        padding: 24px 12px;
+    .contact-box {
+        border-radius: 12px;
     }
 
-    .hero h1 {
-        letter-spacing: -0.02em;
+    .section {
+        padding: 64px 0;
+    }
+
+    .section-head {
+        margin-bottom: 40px;
+    }
+
+    .terminal {
+        margin-top: 44px;
     }
 
     .terminal-body {
-        padding: 14px;
-        font-size: 0.74rem;
+        font-size: 0.8rem;
     }
 
-    .terminal-bar span {
-        max-width: 120px;
-    }
-
-    .contact-box h2 {
-        line-height: 1.15;
+    .cta-row {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 56px;
     }
 }
+
 
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
@@ -1058,10 +1099,4 @@ svg {
     font-size: 0.78rem;
     color: var(--text-dim);
     opacity: 0.6;
-}
-
-@media (max-width: 480px) {
-    .dt-card {
-        padding: 32px 24px;
-    }
 }
