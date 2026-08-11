@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+
+footer {
+    background: #0e0e0e;
+    color: #9ca3af;
+    padding: 55px 7%;
+    border-top: 1px solid #1f2937;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+footer h2 {
+    color: white;
+    display: flex;
+}
+
+footer .home {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+footer .home a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+footer .home a:hover {
+    color: #fff;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.social a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.social a:hover {
+    color: #fff;
+}
+
+.learn {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.learn a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.learn a:hover {
+    color: #fff;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 60px;
+    gap: 40px;
+}
+
+.info p {
+    margin: 0 0 8px;
+    font-size: 15px;
+}
+
+.info .mono {
+    font-family: monospace;
+    color: #6b7280;
+}

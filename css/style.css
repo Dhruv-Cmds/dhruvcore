@@ -27,7 +27,9 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    padding-top: 78px;
+
+    /* if you want to make nav sticky use this  */
+    /* padding-top: 78px; */
 }
 
 h1,
@@ -66,11 +68,13 @@ nav {
     margin-top: 0;
     padding: 10px;
 
+    /* if you want to make nav sticky use this  */
+    /* 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 100; */
 
     background: rgba(13, 17, 23, 0.85);
     backdrop-filter: blur(10px);
@@ -669,41 +673,6 @@ nav .wrap {
     border-bottom: 2px solid var(--accent-soft);
     padding-bottom: 4px;
     word-break: break-word;
-}
-
-.social-row {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 36px;
-    font-size: 0.9rem;
-}
-
-.social-row a {
-    color: var(--text-dim);
-}
-
-.social-row a:hover {
-    color: var(--text);
-}
-
-footer {
-    padding: 40px 0;
-    border-top: 1px solid var(--border);
-}
-
-footer .wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-footer p {
-    color: var(--text-dim);
-    font-size: 0.85rem;
 }
 
 /* ===== BASE RESPONSIVE / ZOOM FIX ===== */
